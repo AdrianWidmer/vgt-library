@@ -1,10 +1,7 @@
 import { createReducer, on } from "@ngrx/store"
 import { <%=classify(name)%> } from "./<%=classify(name)%>.model";
 import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
-import { <import { camelize } fromimportimport { camelize } from "@angular-devkit/core/src/utils/strings";
- { camelize } from "@angular-devkit/core/src/utils/strings";
- "@angular-devkit/core/src/utils/strings";
-%=classify(name)%>Actions } from './<%=classify(name)%>.actions'
+import { <%=classify(name)%>Actions } from "./<%=classify(name)%>.actions";
 
 
 export interface <%=classify(name)%>State extends EntityState<<%=classify(name)%>> {

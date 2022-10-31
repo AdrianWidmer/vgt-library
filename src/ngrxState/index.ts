@@ -9,11 +9,9 @@ import { Schema } from './schema';
 export function ngrxState(_options: Schema): Rule {
   return async (_tree: Tree, _context: SchematicContext) => {
 
-    if (!_options?.path) {
 
-      if (_options.path === undefined) {
-        _options.path = `src/app/shared/entity-data`;
-      }
+    if (_options.path === undefined) {
+      _options.path = `src/app/shared/entity-data`;
     }
 
 
