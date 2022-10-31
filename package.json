@@ -1,6 +1,6 @@
 {
   "name": "vgt-library",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "VGT Library",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -28,7 +28,7 @@
     "typescript": "file:../../node_modules/typescript"
   },
   "peerDependencies": {
-    "@angular/common": "^14.2.8",
-    "@angular/core": "^7.2.0"
+    "@angular/common": "^14.0.4",
+    "@angular/core": "^14.0.4"
   }
 }
