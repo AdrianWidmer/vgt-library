@@ -1,0 +1,14 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Add my library to the project.",
+      "factory": "./ng-add/index#ngAdd"
+    },
+    "ngrxState": {
+      "description": "Schematic to create a ngrx state.",
+      "factory": "./ngrxState/index#ngrxState",
+      "schema": "./ngrxState/schema.json"
+    }
+  }
+}

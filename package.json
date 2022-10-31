@@ -1,0 +1,34 @@
+{
+  "name": "vgt-library",
+  "version": "0.0.1",
+  "description": "VGT Library",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && jasmine src/**/*_spec.js"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^14.2.6",
+    "@angular-devkit/schematics": "^14.2.6",
+    "typescript": "~4.7.2"
+  },
+  "ng-add": {
+    "save": "devDependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^14.15.0",
+    "@types/jasmine": "~4.0.0",
+    "jasmine": "^4.0.0",
+    "copyfiles": "file:../../node_modules/copyfiles",
+    "typescript": "file:../../node_modules/typescript"
+  },
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  }
+}
