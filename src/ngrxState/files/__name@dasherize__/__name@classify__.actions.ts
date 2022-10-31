@@ -1,6 +1,6 @@
 import { createAction, props } from "@ngrx/store";
 import { <%=classify(name) %> } from './<%=classify(name)%>.model';
-
+import { Update } from "@ngrx/entity";
 
 /************************************
  * <%=classify(name) %>s
@@ -37,7 +37,7 @@ export const storeAll<%=classify(name) %>s = createAction(
 
 export const storeUpdated<%=classify(name) %> = createAction(
     "[<%=classify(name) %> Component] Store Updated <%=classify(name) %>",
-    props < { <%=camelize(name) %>: <%=classify(name) %> }> ()
+    props < { <%=camelize(name) %>: Update<<%=classify(name) %>> }> ()
 )
 
 export const storeError = createAction(

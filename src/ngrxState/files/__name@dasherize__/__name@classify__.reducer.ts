@@ -1,7 +1,10 @@
 import { createReducer, on } from "@ngrx/store"
 import { <%=classify(name)%> } from "./<%=classify(name)%>.model";
 import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
-import { <%=classify(name)%>Actions } from './<%=classify(name)%>.actions'
+import { <import { camelize } fromimportimport { camelize } from "@angular-devkit/core/src/utils/strings";
+ { camelize } from "@angular-devkit/core/src/utils/strings";
+ "@angular-devkit/core/src/utils/strings";
+%=classify(name)%>Actions } from './<%=classify(name)%>.actions'
 
 
 export interface <%=classify(name)%>State extends EntityState<<%=classify(name)%>> {
@@ -34,18 +37,15 @@ export const admin<%=classify(name)%>Reducer = createReducer(
   }),
 
   on(<%=classify(name)%>Actions.storeAll<%=classify(name)%>s, (state, action) => {
-    return adapter.upsertMany(action.<%=classify(name)%>s, { ...state, error: null, isLoaded: true });
+    return adapter.upsertMany(action.<%=camelize(name)%>s, { ...state, error: null, isLoaded: true });
   }),
 
   on(<%=classify(name)%>Actions.storeUpdated<%=classify(name)%>, (state, action) => {
-    return adapter.updateOne({
-      id: action.<%=camelize(name)%>._id,
-      changes: action.<%=classify(name)%>
-    }, { ...state, error: null });
+    return adapter.updateOne(action.<%=camelize(name)%>, { ...state, error: null });
   }),
 
   on(<%=classify(name)%>Actions.delete<%=classify(name)%>, (state, action) => {
-    return adapter.removeOne(action.<%=classify(name)%>Id, { ...state, error: null });
+    return adapter.removeOne(action.<%=camelize(name)%>Id, { ...state, error: null });
   }),
 
   on(<%=classify(name)%>Actions.storeError, (state, action) => {

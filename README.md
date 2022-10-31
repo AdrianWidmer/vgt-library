@@ -1,28 +1,40 @@
-# Getting Started With Schematics
+# Library for VGT Plattform
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+Libray to use with [Angular CLI](https://github.com/angular/angular-cli).
 
-### Testing
+# How to install
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
-
-Check the documentation with
+Run the command:
 
 ```bash
-schematics --help
+npm i vgt-library --legacy-peer-deps 
 ```
 
-### Unit Testing
+(Needs to be done only once, when creating a new project based on Angular for VGT)
 
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
 
-### Publishing
 
-To publish, simply do:
+
+# How to create NGRX State
+
+Run the command:
+
 
 ```bash
-npm run build
-npm publish
+ng generate vgt-library:ngrxState
 ```
 
-That's it!
+there are 2 additional inputs:
+
+1. Name of the state (creates also model with same name)
+2. Path (for example: src/app/shared/entity-data)
+
+Result: Creates 6 Files
+
+- stateName.actions.ts
+- stateName.effects.ts
+- stateName.model.ts
+- stateName.reducer.ts
+- stateName.selectors.ts
+- stateName.service.ts
+

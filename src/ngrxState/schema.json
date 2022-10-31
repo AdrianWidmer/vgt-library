@@ -7,25 +7,19 @@
     "properties": {
         "name": {
             "type": "string",
-            "description": "The name of the person",
+            "description": "The name of the state and the newly created class model",
             "$default": {
                 "$source": "argv",
                 "index": 0
             },
-            "x-prompt": "Describe your class name?"
+            "x-prompt": "Describe your state name? (Also used for class model)"
         },
         "path": {
             "type": "string",
             "format": "path",
             "description": "The path at which to create the state files, relative to the current workspace. Default is a folder with the same name as the class in the project root.",
             "visible": false,
-            "x-prompt": "Add your path"
-        },
-        "isInAngularProject": {
-            "type": "boolean",
-            "description": "Is the project in an Angular project?",
-            "visible": false,
-            "x-prompt": "Is this in a angular project"
+            "x-prompt": "Add your path (optional)"
         }
     },
     "required": [

@@ -33,8 +33,8 @@ export class <%=classify(name) %>Effects extends EffectHelper {
                 }),
                 map((<%=camelize(name)%>s: <%=classify(name) %>[]) => {
                     this.store.dispatch(
-                        <%=classify(name) %>Actions.store<%=classify(name) %>({
-                            entities: <%=camelize(name)%>s,
+                        <%=classify(name) %>Actions.storeAll<%=classify(name) %>s({
+                            <%=camelize(name)%>s: <%=camelize(name)%>s,
                         })
                     );
                 }),
@@ -55,7 +55,7 @@ export class <%=classify(name) %>Effects extends EffectHelper {
     createNew<%=classify(name) %>$ = createEffect(
         () =>
             this.actions$.pipe(
-                ofType(<%=classify(name) %>Actions.addNew<%=classify(name) %>),
+                ofType(<%=classify(name) %>Actions.create<%=classify(name) %>),
                 switchMap((action) => {
                     return combineLatest([
                         this.<%=classify(name) %>Service.create<%=classify(name) %>(action.<%=camelize(name)%>),
@@ -64,7 +64,7 @@ export class <%=classify(name) %>Effects extends EffectHelper {
                 }),
                 map(([response, action]) => {
                     this.store.dispatch(
-                        <%=classify(name) %>Actions.storeOne<%=classify(name) %>({
+                        <%=classify(name) %>Actions.storeSingle<%=classify(name) %>({
                             <%=camelize(name)%>: response?.body,
                         })
                     );
