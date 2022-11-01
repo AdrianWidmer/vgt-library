@@ -9,6 +9,10 @@
       "description": "Schematic to create a ngrx state.",
       "factory": "./ngrxState/index#ngrxState",
       "schema": "./ngrxState/schema.json"
+    },
+    "dialog": {
+      "description": "A blank schematic.",
+      "factory": "./dialog/index#dialog"
     }
   }
 }
