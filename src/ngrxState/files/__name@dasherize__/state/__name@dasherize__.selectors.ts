@@ -3,7 +3,7 @@ import * as ReducerSelectors from './<%=classify(name) %>.reducer';
 import { <%=classify(name) %>State } from './<%=classify(name)%>.reducer';
 
 export const <%=classify(name) %>FeatureSelector =
-createFeatureSelector <<%=classify(name) %>State> (
+createFeatureSelector<<%=classify(name) %>State> (
     '<%=camelize(name)%>'
 );
 
