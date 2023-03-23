@@ -11,9 +11,9 @@ import { Store } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorService } from 'src/app/shared/services/error.service';
 import { EffectHelper } from 'src/app/shared/services/effect.helper';
-import { <%=classify(name) %>Actions } from './<%=classify(name)%>.actions'
-import { <%=classify(name) %>} from "./<%=classify(name)%>.model";
-import { <%=classify(name) %>Service } from "./<%=classify(name)%>.service";
+import { <%=classify(name) %>Actions } from './<%=dasherize(name)%>.actions'
+import { <%=classify(name) %>} from "../<%=dasherize(name)%>.model";
+import { <%=classify(name) %>Service } from "./<%=dasherize(name)%>.service";
 
 @Injectable()
 export class <%=classify(name) %>Effects extends EffectHelper {
@@ -116,21 +116,21 @@ export class <%=classify(name) %>Effects extends EffectHelper {
      *
      * If successful, stored in <%=classify(name) %>State.
      */
-         delete<%=classify(name) %>$ = createEffect(
-            () =>
-                this.actions$.pipe(
-                    ofType(<%=classify(name) %>Actions.delete<%=classify(name) %>),
-                    switchMap((action) => {
-                        return this.<%=classify(name) %>Service.delete<%=classify(name) %>(
+    delete<%=classify(name) %>$ = createEffect(
+        () =>
+            this.actions$.pipe(
+                ofType(<%=classify(name) %>Actions.delete<%=classify(name) %>),
+                switchMap((action) => {
+                    return this.<%=classify(name) %>Service.delete<%=classify(name) %>(
                             action.<%=camelize(name)%>Id
-                        );
-                    }),
-                    catchError((error: HttpErrorResponse) => {
-                        return this.handleError(error);
-                    }),
-                    repeat()
+                    );
+                }),
+                catchError((error: HttpErrorResponse) => {
+                    return this.handleError(error);
+                 }),
+                repeat()
                 ),
-            { dispatch: false, resubscribeOnError: true }
+        { dispatch: false, resubscribeOnError: true }
         );
 
     constructor(

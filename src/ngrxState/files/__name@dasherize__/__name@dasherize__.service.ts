@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/reducers';
-import { BaseAPIService } from 'src/app/shared/services/base-services/base-service.service.ts';
-import { <%=classify(name)%> } from './<%=classify(name)%>.model';
+import { BaseAPIService } from 'src/app/shared/services/base-services/base-service.service';
+import { <%=classify(name)%> } from './<%=dasherize(name)%>.model';
 
 @Injectable()
 export class <%=classify(name)%>Service extends BaseAPIService {
@@ -28,6 +28,6 @@ export class <%=classify(name)%>Service extends BaseAPIService {
   };
 
   delete<%= classify(name) %>(<%= camelize(name) %>Id: string): Observable<HttpResponse<boolean>> {
-    return this.delete<boolean>(`${this.requestURL}`,<%= camelize(name) %>Id);
+    return this.delete<boolean>(`${this.requestURL}/${<%= camelize(name) %>Id}`);
   };
 }

@@ -1,14 +1,14 @@
 import { createReducer, on } from "@ngrx/store"
-import { <%=classify(name)%> } from "./<%=classify(name)%>.model";
+import { <%=classify(name)%> } from "../<%=dasherize(name)%>.model";
 import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
-import { <%=classify(name)%>Actions } from "./<%=classify(name)%>.actions";
+import { <%=classify(name)%>Actions } from "./<%=dasherize(name)%>.actions";
 
 
 export interface <%=classify(name)%>State extends EntityState<<%=classify(name)%>> {
-    ids: [];
-    entities: {};
-    isLoaded: boolean;
-    error: string;
+  ids: [];
+  entities: {};
+  isLoaded: boolean;
+  error: string;
 }   
 
 export const initial<%=classify(name)%>State: <%=classify(name)%>State = {
@@ -27,7 +27,7 @@ export const adapter: EntityAdapter<<%=classify(name)%>> =
   });
 
 export const <%=classify(name)%>Reducer = createReducer(
-    initial<%=classify(name)%>State,
+  initial<%=classify(name)%>State,
 
   on(<%=classify(name)%>Actions.get<%=classify(name)%>s, (state, action) => {
     return { ...state, error: null, isLoaded: false };

@@ -8,16 +8,16 @@ createFeatureSelector <<%=classify(name) %>State> (
 );
 
 export const selectIsLoaded = createSelector(
-    <%=classify(name) %>FeatureSelector,
-    (state) => state?.isLoaded
+  <%=classify(name) %>FeatureSelector,
+  (state) => state?.isLoaded
 );
 
 export const select<%=classify(name) %>s = createSelector(
-    <%=classify(name) %>FeatureSelector,
-    ReducerSelectors.select<%=classify(name)%>s
+  <%=classify(name) %>FeatureSelector,
+  ReducerSelectors.select<%=classify(name)%>s
 );
 
 export const select<%=classify(name) %>Error = createSelector(
-    <%=classify(name) %>FeatureSelector,
-    (state) => state.error
+  <%=classify(name) %>FeatureSelector,
+  (state) => state.error
 );

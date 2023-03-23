@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { <%=classify(name) %> } from './<%=classify(name)%>.model';
+import { <%=classify(name) %> } from '../<%=dasherize(name)%>.model';
 import { Update } from "@ngrx/entity";
 
 /************************************
