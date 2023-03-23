@@ -13,7 +13,7 @@ import { ErrorService } from 'src/app/shared/services/error.service';
 import { EffectHelper } from 'src/app/shared/services/effect.helper';
 import { <%=classify(name) %>Actions } from './<%=dasherize(name)%>.actions'
 import { <%=classify(name) %>} from "../<%=dasherize(name)%>.model";
-import { <%=classify(name) %>Service } from "./<%=dasherize(name)%>.service";
+import { <%=classify(name) %>Service } from "../<%=dasherize(name)%>.service";
 
 @Injectable()
 export class <%=classify(name) %>Effects extends EffectHelper {
