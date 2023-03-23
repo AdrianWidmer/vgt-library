@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/reducers';
-import { BaseAPIService } from 'src/app/shared/services/base-service.service';
+import { BaseAPIService } from 'src/app/shared/services/base-services/base-service.service.ts';
 import { <%=classify(name)%> } from './<%=classify(name)%>.model';
 
 @Injectable()

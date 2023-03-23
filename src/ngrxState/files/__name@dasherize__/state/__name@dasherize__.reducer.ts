@@ -26,7 +26,7 @@ export const adapter: EntityAdapter<<%=classify(name)%>> =
     selectId: (<%=classify(name)%>) => <%=classify(name)%>._id,
   });
 
-export const admin<%=classify(name)%>Reducer = createReducer(
+export const <%=classify(name)%>Reducer = createReducer(
     initial<%=classify(name)%>State,
 
   on(<%=classify(name)%>Actions.get<%=classify(name)%>s, (state, action) => {
