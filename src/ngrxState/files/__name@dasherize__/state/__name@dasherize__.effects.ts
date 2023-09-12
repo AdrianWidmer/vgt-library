@@ -97,7 +97,7 @@ export class <%=classify(name) %>Effects extends EffectHelper {
                     this.store.dispatch(
                         <%=classify(name) %>Actions.storeUpdated<%=classify(name) %>({
                             <%=camelize(name)%>: {
-                                id: action.<%=camelize(name)%>._id,
+                                id: action.<%=camelize(name)%>.id,
                                 changes: action.<%=camelize(name)%>,
                             },
                         })
@@ -135,7 +135,7 @@ export class <%=classify(name) %>Effects extends EffectHelper {
 
     constructor(
         private actions$: Actions,
-        private <%=classify(name) %>Service: <%=classify(name) %>Service,
+        private <%=camelize(name) %>Service: <%=classify(name) %>Service,
         public store: Store,
         public errorService: ErrorService,
     ) {

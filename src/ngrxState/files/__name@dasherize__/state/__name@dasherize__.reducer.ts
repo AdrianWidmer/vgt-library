@@ -23,10 +23,10 @@ export const initial<%=classify(name)%>State: <%=classify(name)%>State = {
  */
 export const adapter: EntityAdapter<<%=classify(name)%>> =
   createEntityAdapter<<%=classify(name)%>>({
-    selectId: (<%=classify(name)%>) => <%=classify(name)%>._id,
+    selectId: (<%=classify(name)%>) => <%=classify(name)%>.id,
   });
 
-export const <%=classify(name)%>Reducer = createReducer(
+export const <%=camelize(name)%>Reducer = createReducer(
   initial<%=classify(name)%>State,
 
   on(<%=classify(name)%>Actions.get<%=classify(name)%>s, (state, action) => {
@@ -35,6 +35,10 @@ export const <%=classify(name)%>Reducer = createReducer(
 
   on(<%=classify(name)%>Actions.storeAll<%=classify(name)%>s, (state, action) => {
     return adapter.upsertMany(action.<%=camelize(name)%>s, { ...state, error: null, isLoaded: true });
+  }),
+
+  on(<%=classify(name)%>Actions.storeSingle<%=classify(name)%>s, (state, action) => {
+    return adapter.addOne(action.<%=camelize(name)%>s, { ...state, error: null, isLoaded: true });
   }),
 
   on(<%=classify(name)%>Actions.storeUpdated<%=classify(name)%>, (state, action) => {
