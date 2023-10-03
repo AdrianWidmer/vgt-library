@@ -37,8 +37,8 @@ export const <%=camelize(name)%>Reducer = createReducer(
     return adapter.upsertMany(action.<%=camelize(name)%>s, { ...state, error: null, isLoaded: true });
   }),
 
-  on(<%=classify(name)%>Actions.storeSingle<%=classify(name)%>s, (state, action) => {
-    return adapter.addOne(action.<%=camelize(name)%>s, { ...state, error: null, isLoaded: true });
+  on(<%=classify(name)%>Actions.storeSingle<%=classify(name)%>, (state, action) => {
+    return adapter.addOne(action.<%=camelize(name)%>, { ...state, error: null, isLoaded: true });
   }),
 
   on(<%=classify(name)%>Actions.storeUpdated<%=classify(name)%>, (state, action) => {

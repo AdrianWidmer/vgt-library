@@ -27,7 +27,7 @@ export class <%=classify(name) %>Effects extends EffectHelper {
         () =>
             this.actions$.pipe(
                 ofType(<%=classify(name) %>Actions.get<%=classify(name) %>s),
-                switchMap((action) => this.<%=classify(name) %>Service.get<%=classify(name) %>s()),
+                switchMap((action) => this.<%=camelize(name) %>Service.get<%=classify(name) %>s()),
                 map((<%=camelize(name)%>Response) => {
                     return <%=camelize(name)%>Response?.body?.map((<%=camelize(name)%>) => { return { ...new <%=classify(name) %>(<%=camelize(name)%>) } });
                 }),
@@ -58,7 +58,7 @@ export class <%=classify(name) %>Effects extends EffectHelper {
                 ofType(<%=classify(name) %>Actions.create<%=classify(name) %>),
                 switchMap((action) => {
                     return combineLatest([
-                        this.<%=classify(name) %>Service.create<%=classify(name) %>(action.<%=camelize(name)%>),
+                        this.<%=camelize(name) %>Service.create<%=classify(name) %>(action.<%=camelize(name)%>),
                         of(action),
                     ]);
                 }),
@@ -89,7 +89,7 @@ export class <%=classify(name) %>Effects extends EffectHelper {
                 ofType(<%=classify(name) %>Actions.update<%=classify(name) %>),
                 switchMap((action) =>
                     combineLatest([
-                        this.<%=classify(name) %>Service.update<%=classify(name) %>(action.<%=camelize(name)%>),
+                        this.<%=camelize(name) %>Service.update<%=classify(name) %>(action.<%=camelize(name)%>),
                         of(action),
                     ])
                 ),
@@ -121,7 +121,7 @@ export class <%=classify(name) %>Effects extends EffectHelper {
             this.actions$.pipe(
                 ofType(<%=classify(name) %>Actions.delete<%=classify(name) %>),
                 switchMap((action) => {
-                    return this.<%=classify(name) %>Service.delete<%=classify(name) %>(
+                    return this.<%=camelize(name) %>Service.delete<%=classify(name) %>(
                             action.<%=camelize(name)%>Id
                     );
                 }),

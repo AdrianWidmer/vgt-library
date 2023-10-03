@@ -1,6 +1,6 @@
 {
   "name": "vgt-library",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "VGT Library",
   "scripts": {
     "build": "tsc -p tsconfig.json",
