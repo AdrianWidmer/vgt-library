@@ -7,7 +7,7 @@ Libray to use with [Angular CLI](https://github.com/angular/angular-cli).
 Run the command:
 
 ```bash
-npm i vgt-library --legacy-peer-deps 
+yarn add vgt-library
 ```
 
 (Needs to be done only once, when creating a new project based on Angular for VGT)
