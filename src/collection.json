@@ -12,7 +12,7 @@
     },
     "baseModule": {
       "description": "Create a base Angular module structure.",
-      "factory": "./baseModule/index#createBaseModule",
+      "factory": "./baseModule/index#ngGenerateBaseModule",
       "schema": "./baseModule/schema.json"
     }
   }

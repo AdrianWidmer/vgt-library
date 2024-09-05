@@ -68,12 +68,12 @@ This command will create the following structure:
 If you run:
 
 ```bash
-ng generate vgt-library:baseModule --moduleName=User --path=src/app/modules
+ng generate vgt-library:baseModule --moduleName=TestModule --path=src/app/modules
 ```
 
 It will generate:
 
-- `src/app/modules/User/`
+- `src/app/modules/test-module/`
   - `components/`
   - `entities/`
   - `enums/`
@@ -82,8 +82,8 @@ It will generate:
   - `resolvers/`
   - `services/`
   - `utils/`
-  - `User.module.ts`
-  - `User.routing.ts`
+  - `test-module.module.ts`
+  - `test-module.routing.ts`
 
 ## License
 

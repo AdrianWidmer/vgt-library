@@ -13,6 +13,12 @@
       "type": "string",
       "description": "The path where the module should be created.",
       "x-prompt": "What is the path where you want to create the module?"
+    },
+    "route": {
+      "type": "string",
+      "description": "The route path to be added for lazy loading the new module.",
+      "default": "",
+      "x-prompt": "What is the base route path for lazy loading the module?"
     }
   },
   "required": [
