@@ -1,6 +1,6 @@
 {
   "name": "vgt-library",
-  "version": "0.2.1",
+  "version": "0.3.7",
   "description": "VGT Library",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -13,22 +13,22 @@
   "license": "MIT",
   "schematics": "./src/collection.json",
   "dependencies": {
-    "@angular-devkit/core": "^16.1.1",
-    "@angular-devkit/schematics": "^16.1.1",
+    "@angular-devkit/core": "^18.2.2",
+    "@angular-devkit/schematics": "^18.2.2",
     "typescript": "~4.7.2"
   },
   "ng-add": {
     "save": "devDependencies"
   },
   "devDependencies": {
-    "@types/node": "^14.15.0",
     "@types/jasmine": "~4.0.0",
-    "jasmine": "^4.0.0",
+    "@types/node": "^14.18.63",
     "copyfiles": "file:../../node_modules/copyfiles",
+    "jasmine": "^4.6.0",
     "typescript": "file:../../node_modules/typescript"
   },
   "peerDependencies": {
-    "@angular/common": "^16.1.1",
-    "@angular/core": "^16.1.1"
+    "@angular/common": "^18.2.2",
+    "@angular/core": "^18.2.2"
   }
 }

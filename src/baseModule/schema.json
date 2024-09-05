@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "title": "Base Module Options Schema",
+  "type": "object",
+  "$id": "BaseModuleSchema",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the Angular module.",
+      "x-prompt": "Name of the module"
+    },
+    "path": {
+      "type": "string",
+      "description": "The path where the module should be created.",
+      "x-prompt": "What is the path where you want to create the module?"
+    }
+  },
+  "required": [
+    "name",
+    "path"
+  ]
+}

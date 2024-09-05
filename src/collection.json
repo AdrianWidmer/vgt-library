@@ -10,9 +10,10 @@
       "factory": "./ngrxState/index#ngrxState",
       "schema": "./ngrxState/schema.json"
     },
-    "dialog": {
-      "description": "A blank schematic.",
-      "factory": "./dialog/index#dialog"
+    "baseModule": {
+      "description": "Create a base Angular module structure.",
+      "factory": "./baseModule/index#createBaseModule",
+      "schema": "./baseModule/schema.json"
     }
   }
 }
