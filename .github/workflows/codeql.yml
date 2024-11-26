@@ -1,0 +1,81 @@
+name: "SAST Analysis"
+
+on:
+  push:
+    branches: [ develop, release ]
+  pull_request:
+    branches: [ develop, release ]
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly scan on Sunday
+
+jobs:
+  analyze:
+    name: CodeQL Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript', 'typescript' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-and-quality
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+        with:
+          category: "/language:${{matrix.language}}"
+
+      # Optional: Comment findings on PR
+      - name: Get CodeQL Report
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: alerts } = await github.rest.codeScanning.listAlertsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.sha
+            });
+            
+            if (alerts.length > 0) {
+              let comment = '## CodeQL Security Analysis Results\n\n';
+              comment += `Found ${alerts.length} security alert(s):\n\n`;
+              
+              alerts.forEach(alert => {
+                comment += `### ${alert.rule.description}\n`;
+                comment += `- Severity: ${alert.rule.severity}\n`;
+                comment += `- Location: ${alert.most_recent_instance.location.path}:${alert.most_recent_instance.location.start_line}\n`;
+                comment += `- Details: ${alert.most_recent_instance.message.text}\n\n`;
+              });
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: comment
+              });
+            }
